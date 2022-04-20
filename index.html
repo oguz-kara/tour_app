@@ -1,0 +1,2352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Gezi Uygulamasi</title>
+  </head>
+
+  <body>
+    <!-- 
+      ICONS
+      <span class="chevron-up">
+        <i class="fas fa-chevron-up"></i> 
+      </span>
+      <span class="chevron-up">
+        <i class="fas fa-chevron-up"></i>
+      </span>
+     -->
+    <nav class="navbar">
+      <div class="link active">
+        <!-- icon -->
+        <span><i class="fas fa-globe-europe"></i></span>
+        YURTDISI TURLARI
+      </div>
+      <div class="link">
+        <!-- icon -->
+        <span><i class="fas fa-landmark"></i></span>
+        KÜLTÜR TURLARI
+      </div>
+      <div class="link">
+        <!-- icon -->
+        <span><i class="fas fa-ship"></i></span>
+        GEMİ TURLARI
+      </div>
+      <div class="link">
+        <!-- icon -->
+        <span><i class="fas fa-book"></i></span>
+        VİZE İŞLEMLERİ
+      </div>
+      <div class="link auth">KAYIT OL</div>
+      <div class="link auth">GIRIS YAP</div>
+    </nav>
+    <div class="container">
+      <div class="search">
+        <div class="wrapper">
+          <input
+            type="text"
+            placeholder="Yurtici, Yurtdisi Gitmek Istediginiz Destinasyos"
+          />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <div class="main">
+        <div class="sidebar">
+          <div class="filters filter-item">
+            <h4 class="header filter-item-header">Filters</h4>
+            <div class="filter-list">
+              <div class="filter">
+                <button class="delete-filter">
+                  <i class="far fa-times-circle"></i>
+                </button>
+                <div class="info">
+                  <span>Kalkış Tarihi: </span>
+                  <span class="bold"> Şubat 2021 </span>
+                </div>
+              </div>
+            </div>
+            <button class="delete-filters">Tümünü Temizle</button>
+          </div>
+          <!-- Filters will be here -->
+          <div class="popularity filter-item">
+            <div class="filter-item-header">
+              <h4 class="header">
+                Popülarite:
+                <span class="thin"> En Popüler </span>
+              </h4>
+
+              <button class="collapse-menu-btn">
+                <span class="chevron-up">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </button>
+            </div>
+            <!-- <div class="collapse-menu"></div> -->
+          </div>
+          <div class="tour-time filter-item">
+            <div class="filter-item-header">
+              <h4 class="header">Tur Süresi</h4>
+              <button class="collapse-menu-btn">
+                <span class="chevron-up">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </button>
+            </div>
+            <div class="collapse-menu">
+              <div class="select-tour-days">
+                <div class="min-max bold">
+                  <div class="min"><span class="faded">min</span> 3 gün</div>
+                  <div class="max">21+ gün</div>
+                </div>
+                <div class="day-selector-container">
+                  <input
+                    id="days-range"
+                    type="range"
+                    min="3"
+                    max="21"
+                    step="1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="deporture-date filter-item">
+            <div class="filter-item-header">
+              <h4 class="header">Kalkış Tarihi</h4>
+              <button class="collapse-menu-btn">
+                <span class="chevron-up">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </button>
+            </div>
+            <div class="collapse-menu">
+              <div class="types">
+                <!-- date should have date-id or data-id -->
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      class="date-pick"
+                      type="checkbox"
+                      name="Ocak 2021"
+                      value="Ocak 2021"
+                    />
+                    <label for="date">Ocak 2021</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      class="date-pick"
+                      type="checkbox"
+                      name="Ocak 2021"
+                      value="Ocak 2021"
+                    />
+                    <label for="date">Ocak 2021</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      class="date-pick"
+                      type="checkbox"
+                      name="Ocak 2021"
+                      value="Ocak 2021"
+                    />
+                    <label for="date">Ocak 2021</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      class="date-pick"
+                      type="checkbox"
+                      name="Ocak 2021"
+                      value="Ocak 2021"
+                    />
+                    <label for="date">Ocak 2021</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      class="date-pick"
+                      type="checkbox"
+                      name="Ocak 2021"
+                      value="Ocak 2021"
+                    />
+                    <label for="date">Ocak 2021</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+                <div class="show-more">Daha fazla göster</div>
+                <div class="pick-date">
+                  <label for="birthday">Özel bir tarih seçin:</label>
+                  <input type="date" id="special-date" name="special-date" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="type-of-tour filter-item">
+            <div class="filter-item-header">
+              <h4 class="header">Tur Çeşidi</h4>
+              <button class="collapse-menu-btn">
+                <span class="chevron-up">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </button>
+            </div>
+            <div class="collapse-menu">
+              <div class="types">
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      id="group"
+                      type="checkbox"
+                      name="Group"
+                      value="Group"
+                    />
+                    <label for="group">Grup</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      id="special"
+                      type="checkbox"
+                      name="Special"
+                      value="Special"
+                    />
+                    <label for="group">Özel</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="type-of-guide filter-item">
+            <div class="filter-item-header">
+              <h4 class="header">Rehber Türü</h4>
+              <button class="collapse-menu-btn">
+                <span class="chevron-up">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </button>
+            </div>
+            <div class="collapse-menu">
+              <div class="types">
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      id="fully-guided"
+                      type="checkbox"
+                      name="Fully Guided"
+                      value="Fully Guided"
+                    />
+                    <label for="group">Tam Rehberlik</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      id="partly-guided"
+                      type="checkbox"
+                      name="Partly Guided"
+                      value="Partly Guided"
+                    />
+                    <label for="group">Kısmi Rehberlik</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+                <div class="type">
+                  <div class="check-item">
+                    <input
+                      id="self-guided"
+                      type="checkbox"
+                      name="Self Guided"
+                      value="Self Guided"
+                    />
+                    <label for="group">Kendi Rehberin Ol</label>
+                  </div>
+                  <span class="count">15</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="range-of-age filter-item">
+            <div class="filter-item-header">
+              <h4 class="header">Yaş Aralığı</h4>
+              <button class="collapse-menu-btn">
+                <span class="chevron-up">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </button>
+            </div>
+            <div class="collapse-menu">
+              <div class="buttons">
+                <button id="young" class="age-button">18-30</button>
+                <button id="young-adult" class="age-button">30 +</button>
+                <button id="adult" class="age-button">40 +</button>
+                <button id="adult-old" class="age-button">50 +</button>
+                <button id="old" class="age-button">60 +</button>
+                <button id="too-old" class="age-button">70 +</button>
+              </div>
+              <div class="filter-by-age">
+                <div class="sub-title">
+                  Veya çocuk dostu turlara göre filtreleyin
+                </div>
+                <div class="choose-age">
+                  <input
+                    type="text"
+                    list="ages"
+                    placeholder="En küçük çocuk yaşı"
+                  />
+                  <datalist id="ages">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                  </datalist>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="category filter-item">
+            <div class="filter-item-header">
+              <h4 class="header">Kategori</h4>
+              <button class="collapse-menu-btn">
+                <span class="chevron-up">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </button>
+            </div>
+
+            <div class="collapse-menu">
+              <div class="category-list-item">
+                <div class="category-title">
+                  <span class="chevron-up">
+                    <i class="fas fa-chevron-down"></i>
+                  </span>
+                  <span class="category-list-item-title">Kültürel</span>
+                </div>
+
+                <div class="category-title">
+                  <span class="chevron-up">
+                    <i class="fas fa-chevron-up"></i>
+                  </span>
+                  <span class="category-list-item-title">Aktiviteler</span>
+                </div>
+                <div class="types">
+                  <!-- date should have date-id or data-id -->
+                  <div class="type">
+                    <div class="check-item">
+                      <input
+                        class="date-pick"
+                        type="checkbox"
+                        name="Ocak 2021"
+                        value="Ocak 2021"
+                      />
+                      <label for="date">Gezi</label>
+                    </div>
+                    <span class="count">15</span>
+                  </div>
+                  <div class="type">
+                    <div class="check-item">
+                      <input
+                        class="date-pick"
+                        type="checkbox"
+                        name="Ocak 2021"
+                        value="Ocak 2021"
+                      />
+                      <label for="date">Yemek Eğitimi</label>
+                    </div>
+                    <span class="count">15</span>
+                  </div>
+                  <div class="type">
+                    <div class="check-item">
+                      <input
+                        class="date-pick"
+                        type="checkbox"
+                        name="Ocak 2021"
+                        value="Ocak 2021"
+                      />
+                      <label for="date">Romantik</label>
+                    </div>
+                    <span class="count">15</span>
+                  </div>
+                  <div class="type">
+                    <div class="check-item">
+                      <input
+                        class="date-pick"
+                        type="checkbox"
+                        name="Ocak 2021"
+                        value="Ocak 2021"
+                      />
+                      <label for="date">Yürüyüş Turları</label>
+                    </div>
+                    <span class="count">15</span>
+                  </div>
+                  <div class="type">
+                    <div class="check-item">
+                      <input
+                        class="date-pick"
+                        type="checkbox"
+                        name="Ocak 2021"
+                        value="Ocak 2021"
+                      />
+                      <label for="date">Müze</label>
+                    </div>
+                    <span class="count">15</span>
+                  </div>
+                  <div class="type">
+                    <div class="check-item">
+                      <input
+                        class="date-pick"
+                        type="checkbox"
+                        name="Ocak 2021"
+                        value="Ocak 2021"
+                      />
+                      <label for="date">Dini Yerler</label>
+                    </div>
+                    <span class="count">15</span>
+                  </div>
+                </div>
+                <div class="show-more">Tümünü Seç</div>
+              </div>
+              <div class="category-list-item">
+                <div class="category-title">
+                  <span class="chevron-up">
+                    <i class="fas fa-chevron-down"></i>
+                  </span>
+                  <span class="category-list-item-title">Doğa ve Macera</span>
+                </div>
+              </div>
+              <div class="category-list-item">
+                <div class="category-title">
+                  <span class="chevron-up">
+                    <i class="fas fa-chevron-down"></i>
+                  </span>
+                  <span class="category-list-item-title"
+                    >Festival ve Etkinlikler</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tour-budget filter-item">
+            <div class="filter-item-header">
+              <h4 class="header">Bütçe</h4>
+              <button class="collapse-menu-btn">
+                <span class="chevron-up">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </button>
+            </div>
+            <div class="collapse-menu">
+              <div class="select-butget">
+                <div class="select-butget-type">
+                  <button class="active">Kişi Başı</button>
+                  <button>Günlük</button>
+                </div>
+                <div class="min-max bold">
+                  <div class="min">
+                    <span class="faded">min</span> 15.000 TL
+                  </div>
+                  <div class="max">30.000 TL +</div>
+                </div>
+                <div class="price-selector-container">
+                  <input
+                    id="days-range"
+                    type="range"
+                    min="3"
+                    max="21"
+                    step="1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="citys filter-item">
+            <div class="filter-item-header">
+              <h4 class="header">Gezilecek Şehirler</h4>
+              <button class="collapse-menu-btn">
+                <span class="chevron-up">
+                  <i class="fas fa-chevron-up"></i>
+                </span>
+              </button>
+            </div>
+            <div class="collapse-menu">
+              <div class="tags-container">
+                <div class="tags">
+                  <div class="tag">
+                    <button class="delete-city">
+                      <i class="far fa-times-circle"></i>
+                    </button>
+                    Amsterdam
+                  </div>
+                </div>
+                <div class="choose-city">
+                  <input type="text" list="citys" />
+                  <datalist id="citys">
+                    <option>Istanbul</option>
+                    <option>Amsterdam</option>
+                    <option>Paris</option>
+                    <option>New York</option>
+                    <option>London</option>
+                    <option>Seoul</option>
+                    <option>Tokio</option>
+                    <option>Bucuresti</option>
+                    <option>Moscow</option>
+                  </datalist>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-list">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count faded">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="discount">- %15</div>
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <div class="discount">- %15</div>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1594497657852-3e2ad1475e3c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="discount">- %15</div>
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1566371486490-560ded23b5e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="discount">- %15</div>
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1527179528411-4219e0714bcc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="discount">- %15</div>
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="discount">- %15</div>
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <div class="discount">- %15</div>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1594497657852-3e2ad1475e3c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="discount">- %15</div>
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1566371486490-560ded23b5e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="discount">- %15</div>
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1527179528411-4219e0714bcc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="icon">
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+            <div class="middle">
+              <p class="place">İstanbul Kalkışlı</p>
+              <h3>Europa Highlights Tour</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span class="comment-count">2 yorum</span>
+              </div>
+              <div class="station">
+                <span class="header"><b>Durak</b></span>
+                <span>Italy,Australia,Sweden</span>
+              </div>
+              <div class="categories">
+                <span class="header"><b>Kategori</b></span>
+                <span>Private, Fully Guided, Easy, Adventure</span>
+              </div>
+            </div>
+            <div class="right">
+              <div class="discount">- %15</div>
+              <div class="top">
+                <p>
+                  <b>9</b> GECE <br />
+                  <b>Vizesiz</b>
+                </p>
+                <p>
+                  <del> <b>3.526 TL</b> </del> yerine <br />
+                  <span class="highlighted">3.128 TL</span>
+                </p>
+              </div>
+              <div class="cancel">
+                <i class="fas fa-check-circle"></i>
+                <span>Ücretsiz İptal</span>
+              </div>
+              <button class="card-button">Turu incele</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <span class="write">İtalya Tatili Planla</span>
+      <div class="city-info">
+        <div class="city-plan">
+          <ul>
+            <li>
+              <i class="fas fa-check-circle"></i><b> Venedik:</b> Lorem ipsum
+              dolor sit amet, consectetur adipiscing vestibulum ligula quis
+              lorem auctor, sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i><b> Roma</b>: Lorem ipsum dolor
+              sit amet, consectetur adipiscing vestibulum ligula quis lorem
+              auctor, sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i><b> Floransa</b> Lorem ipsum
+              dolor sit amet, consectetur adipiscing vestibulum ligula quis
+              lorem auctor, sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i><b> Venedik:</b> Lorem ipsum
+              dolor sit amet, consectetur adipiscing vestibulum ligula quis
+              lorem auctor, sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i><b> Roma</b>: Lorem ipsum dolor
+              sit amet, consectetur adipiscing vestibulum ligula quis lorem
+              auctor, sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i><b> Floransa</b> Lorem ipsum
+              dolor sit amet, consectetur adipiscing vestibulum ligula quis
+              lorem auctor, sed pulvinar mauris volutpat.
+            </li>
+          </ul>
+        </div>
+        <div class="city-plan">
+          <ul>
+            <li>
+              <i class="fas fa-book"></i><b> Venedik:</b> Lorem ipsum dolor sit
+              amet, consectetur adipiscing vestibulum ligula quis lorem auctor,
+              sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-book"></i><b> Roma</b>: Lorem ipsum dolor sit
+              amet, consectetur adipiscing vestibulum ligula quis lorem auctor,
+              sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-book"></i><b> Floransa</b> Lorem ipsum dolor sit
+              amet, consectetur adipiscing vestibulum ligula quis lorem auctor,
+              sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-book"></i><b> Venedik:</b> Lorem ipsum dolor sit
+              amet, consectetur adipiscing vestibulum ligula quis lorem auctor,
+              sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-book"></i><b> Roma</b>: Lorem ipsum dolor sit
+              amet, consectetur adipiscing vestibulum ligula quis lorem auctor,
+              sed pulvinar mauris volutpat.
+            </li>
+            <li>
+              <i class="fas fa-book"></i><b> Floransa</b> Lorem ipsum dolor sit
+              amet, consectetur adipiscing vestibulum ligula quis lorem auctor,
+              sed pulvinar mauris volutpat.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="write">İtalya Tatili Yorumları</div>
+      <div class="tour-comments">
+        <div class="comment-card">
+          <div class="top">
+            <div class="avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="top-right">
+              <div class="info">
+                <span class="name">Mutsafa</span>
+                <span class="date">24 Aralık, 2020</span>
+              </div>
+              <div class="rating comment-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="middle">
+            <div class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Necessitatibus nisi consequuntur consectetur...
+            </div>
+            <button class="read-more">Devamını oku</button>
+          </div>
+          <div class="bottom">
+            <span class="bold">Seyahat tarihi:</span>
+            <span>2020 Mayıs</span>
+            <br />
+            <button>
+              <!-- icon will here -->
+              <i class="fas fa-thumbs-up"></i>
+              24
+            </button>
+          </div>
+        </div>
+        <div class="comment-card">
+          <div class="top">
+            <div class="avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="top-right">
+              <div class="info">
+                <span class="name">Mutsafa</span>
+                <span class="date">24 Aralık, 2020</span>
+              </div>
+              <div class="rating comment-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="middle">
+            <div class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Necessitatibus nisi consequuntur consectetur...
+            </div>
+            <button class="read-more">Devamını oku</button>
+          </div>
+          <div class="bottom">
+            <span class="bold">Seyahat tarihi:</span>
+            <span>2020 Mayıs</span>
+            <br />
+            <button>
+              <!-- icon will here -->
+              <i class="fas fa-thumbs-up"></i>
+              24
+            </button>
+          </div>
+        </div>
+        <div class="comment-card">
+          <div class="top">
+            <div class="avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="top-right">
+              <div class="info">
+                <span class="name">Mutsafa</span>
+                <span class="date">24 Aralık, 2020</span>
+              </div>
+              <div class="rating comment-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="middle">
+            <div class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Necessitatibus nisi consequuntur consectetur...
+            </div>
+            <button class="read-more">Devamını oku</button>
+          </div>
+          <div class="bottom">
+            <span class="bold">Seyahat tarihi:</span>
+            <span>2020 Mayıs</span>
+            <br />
+            <button>
+              <!-- icon will here -->
+              <i class="fas fa-thumbs-up"></i>
+              24
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="write">Popüler İtalya ve Diğer Ülke Turları</div>
+      <div class="populer-tour">
+        <div class="populer-tours">
+          <div class="populer-tour-card">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="img-discount">- %25</div>
+              <button class="img-like">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="body">
+              <h4 class="card-header">Berlin Adventure Tour</h4>
+              <div class="rating-comment">
+                <span class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </span>
+                <span class="comment small">2 Yorum</span>
+              </div>
+              <div class="days-novisa"><b>12</b> GECE <b>Vizesiz</b></div>
+              <div class="pricing">
+                <span class="price">
+                  <del><b>2,386 TL</b></del>
+                </span>
+                <span class="faded smaller"> yerine </span>
+                <span class="discount-price highlighted"> 1,459 TL </span>
+                <!-- 
+                "https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1566371486490-560ded23b5e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+               -->
+              </div>
+            </div>
+          </div>
+          <div class="populer-tour-card">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="img-discount">- %25</div>
+              <button class="img-like">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="body">
+              <h4 class="card-header">Berlin Adventure Tour</h4>
+              <div class="rating-comment">
+                <span class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </span>
+                <span class="comment small">2 Yorum</span>
+              </div>
+              <div class="days-novisa"><b>12</b> GECE <b>Vizesiz</b></div>
+              <div class="pricing">
+                <span class="price">
+                  <del><b>2,386 TL</b></del>
+                </span>
+                <span class="faded smaller"> yerine </span>
+                <span class="discount-price highlighted"> 1,459 TL </span>
+                <!-- 
+                "https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1566371486490-560ded23b5e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1527179528411-4219e0714bcc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+               -->
+              </div>
+            </div>
+          </div>
+          <div class="populer-tour-card">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1566371486490-560ded23b5e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="img-discount">- %25</div>
+              <button class="img-like">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="body">
+              <h4 class="card-header">Berlin Adventure Tour</h4>
+              <div class="rating-comment">
+                <span class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </span>
+                <span class="comment small">2 Yorum</span>
+              </div>
+              <div class="days-novisa"><b>12</b> GECE <b>Vizesiz</b></div>
+              <div class="pricing">
+                <span class="price">
+                  <del><b>2,386 TL</b></del>
+                </span>
+                <span class="faded smaller"> yerine </span>
+                <span class="discount-price highlighted"> 1,459 TL </span>
+                <!-- 
+                "https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1566371486490-560ded23b5e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1527179528411-4219e0714bcc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+               -->
+              </div>
+            </div>
+          </div>
+          <div class="populer-tour-card">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt=""
+              />
+              <div class="img-discount">- %25</div>
+              <button class="img-like">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="body">
+              <h4 class="card-header">Berlin Adventure Tour</h4>
+              <div class="rating-comment">
+                <span class="rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </span>
+                <span class="comment small">2 Yorum</span>
+              </div>
+              <div class="days-novisa"><b>12</b> GECE <b>Vizesiz</b></div>
+              <div class="pricing">
+                <span class="price">
+                  <del><b>2,386 TL</b></del>
+                </span>
+                <span class="faded smaller"> yerine </span>
+                <span class="discount-price highlighted"> 1,459 TL </span>
+                <!-- 
+                "https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1566371486490-560ded23b5e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1527179528411-4219e0714bcc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                "https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+               -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="write">İtalya Turları</div>
+      <div class="italy-tour">
+        <div class="tour-card">
+          <h4 class="header">Roman Adventure Tour</h4>
+          <div class="body">
+            <span class="days-novisa"> <b>12</b> GECE </span>
+            <span><b>Vizesiz</b></span>
+            <span>
+              <span class="price">
+                <del><b>2,386 TL</b></del>
+              </span>
+              <span class="discount-price highlighted"> 1,459 TL </span>
+            </span>
+          </div>
+        </div>
+        <div class="tour-card">
+          <h4 class="header">Roman Adventure Tour</h4>
+          <div class="body">
+            <span class="days-novisa"> <b>12</b> GECE </span>
+            <span><b>Vizesiz</b></span>
+            <span>
+              <span class="price">
+                <del><b>2,386 TL</b></del>
+              </span>
+              <span class="discount-price highlighted"> 1,459 TL </span>
+            </span>
+          </div>
+        </div>
+        <div class="tour-card">
+          <h4 class="header">Roman Adventure Tour</h4>
+          <div class="body">
+            <span class="days-novisa"> <b>12</b> GECE </span>
+            <span><b>Vizesiz</b></span>
+            <span>
+              <span class="price">
+                <del><b>2,386 TL</b></del>
+              </span>
+              <span class="discount-price highlighted"> 1,459 TL </span>
+            </span>
+          </div>
+        </div>
+        <div class="tour-card">
+          <h4 class="header">Roman Adventure Tour</h4>
+          <div class="body">
+            <span class="days-novisa"> <b>12</b> GECE </span>
+            <span><b>Vizesiz</b></span>
+            <span>
+              <span class="price">
+                <del><b>2,386 TL</b></del>
+              </span>
+              <span class="discount-price highlighted"> 1,459 TL </span>
+            </span>
+          </div>
+        </div>
+        <div class="tour-card">
+          <h4 class="header">Roman Adventure Tour</h4>
+          <div class="body">
+            <span class="days-novisa"> <b>12</b> GECE </span>
+            <span><b>Vizesiz</b></span>
+            <span>
+              <span class="price">
+                <del><b>2,386 TL</b></del>
+              </span>
+              <span class="discount-price highlighted"> 1,459 TL </span>
+            </span>
+          </div>
+        </div>
+        <div class="tour-card">
+          <h4 class="header">Roman Adventure Tour</h4>
+          <div class="body">
+            <span class="days-novisa"> <b>12</b> GECE </span>
+            <span><b>Vizesiz</b></span>
+            <span>
+              <span class="price">
+                <del><b>2,386 TL</b></del>
+              </span>
+              <span class="discount-price highlighted"> 1,459 TL </span>
+            </span>
+          </div>
+        </div>
+        <div class="tour-card">
+          <h4 class="header">Roman Adventure Tour</h4>
+          <div class="body">
+            <span class="days-novisa"> <b>12</b> GECE </span>
+            <span><b>Vizesiz</b></span>
+            <span>
+              <span class="price">
+                <del><b>2,386 TL</b></del>
+              </span>
+              <span class="discount-price highlighted"> 1,459 TL </span>
+            </span>
+          </div>
+        </div>
+        <div class="tour-card">
+          <h4 class="header">Roman Adventure Tour</h4>
+          <div class="body">
+            <span class="days-novisa"> <b>12</b> GECE </span>
+            <span><b>Vizesiz</b></span>
+            <span>
+              <span class="price">
+                <del><b>2,386 TL</b></del>
+              </span>
+              <span class="discount-price highlighted"> 1,459 TL </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="write">Ne Zaman Gitmeli</div>
+      <div class="go-list line-height-30">
+        <ol>
+          <li>
+            Nullam efficitur aliquam nibh non pharetra. Fusce ac aliquam lacus.
+            Donec nec nulla nec neque volutpat dapibus
+          </li>
+          <li>
+            Donec eu blandit nunc, at ultrices mi. Donec id tincidunt tellus.
+          </li>
+          <li>
+            Aliquam erat volutpat. Quisque sit amet condimentum neque.
+            Suspendisse tincidunt dapibus suscipit.
+          </li>
+          <li>
+            Nullam efficitur aliquam nibh non pharetra. Fusce ac aliquam lacus.
+            Donec nec nulla nec neque volutpat dapibus
+          </li>
+          <li>
+            Donec eu blandit nunc, at ultrices mi. Donec id tincidunt tellus.
+          </li>
+          <li>
+            Aliquam erat volutpat. Quisque sit amet condimentum neque.
+            Suspendisse tincidunt dapibus suscipit.
+          </li>
+        </ol>
+      </div>
+      <div class="write">İtalya Vizesi</div>
+      <div class="visa-italy line-height-30">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          mollis mauris turpis, eget condimentum metus porttitor a. Quisque
+          rutrum feugiat lorem, nec finibus dui blandit sit amet. Ut tristique
+          sit amet eros at sodales. Fusce vulputate scelerisque suscipit. Donec
+          molestie congue felis.
+        </p>
+      </div>
+      <div class="write">İtalya Hakkında</div>
+      <div class="about-italy line-height-30">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          mollis mauris turpis, eget condimentum metus porttitor a. Quisque
+          rutrum feugiat lorem, nec finibus dui blandit sit amet. Ut tristique
+          sit amet eros at sodales. Fusce vulputate scelerisque suscipit. Donec
+          molestie congue felis.
+        </p>
+      </div>
+      <div class="write">İtalya Şehirleri</div>
+      <div class="city-italy line-height-30">
+        <b>Venedik : </b> Gondolları ile aşkınızı tazeleyin! <br />
+        <b>Floransa : </b> Sandalları ile aşkınızı tazeleyin! <br />
+        <b>Roma : </b> Gondolları ile aşkınızı tazeleyin!
+      </div>
+      <div class="write">Görülecek En Önemli Yerler</div>
+      <div class="city-descriptions">
+        <div class="description-card">
+          <!-- <div class="image">
+            
+          </div> -->
+          <img
+            src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+          <div class="description line-height-30">
+            <h4>Venedik</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas
+              ratione tenetur saepe! Corporis asperiores perferendis animi
+              veritatis earum quasi?
+            </p>
+          </div>
+        </div>
+        <div class="description-card">
+          <!-- <div class="image">
+            
+          </div> -->
+          <img
+            src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+          <div class="description line-height-30">
+            <h4>Venedik</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas
+              ratione tenetur saepe! Corporis asperiores perferendis animi
+              veritatis earum quasi?
+            </p>
+          </div>
+        </div>
+        <div class="description-card">
+          <!-- <div class="image">
+            
+          </div> -->
+          <img
+            src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+          <div class="description line-height-30">
+            <h4>Venedik</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas
+              ratione tenetur saepe! Corporis asperiores perferendis animi
+              veritatis earum quasi?
+            </p>
+          </div>
+        </div>
+        <div class="description-card">
+          <!-- <div class="image">
+            
+          </div> -->
+          <img
+            src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+          <div class="description line-height-30">
+            <h4>Venedik</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas
+              ratione tenetur saepe! Corporis asperiores perferendis animi
+              veritatis earum quasi?
+            </p>
+          </div>
+        </div>
+        <div class="description-card">
+          <!-- <div class="image">
+            
+          </div> -->
+          <img
+            src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+          <div class="description">
+            <h4>Venedik</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas
+              ratione tenetur saepe! Corporis asperiores perferendis animi
+              veritatis earum quasi?
+            </p>
+          </div>
+        </div>
+        <div class="description-card">
+          <!-- <div class="image">
+            
+          </div> -->
+          <img
+            src="https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+          <div class="description line-height-30">
+            <h4>Venedik</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas
+              ratione tenetur saepe! Corporis asperiores perferendis animi
+              veritatis earum quasi?
+            </p>
+          </div>
+        </div>
+
+        <!-- 
+          "https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  "https://images.unsplash.com/photo-1566371486490-560ded23b5e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  "https://images.unsplash.com/photo-1527179528411-4219e0714bcc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFjYXRpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  "https://images.unsplash.com/photo-1604172711493-b35e51bcc3f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHZhY2F0aW9uJTIwcGxhY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  "https://images.unsplash.com/photo-1606836131166-5cb137786a8d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+         -->
+      </div>
+      <div class="write">Faydalı Linkler</div>
+      <div class="useful-links">
+        <a href="#" class="useful-link"> Italya da ne yenir </a>
+        <a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a
+        ><a href="#" class="useful-link"> Italya da ne yenir </a>
+      </div>
+      <div class="write">Sıkça Sorulan Sorular</div>
+      <div class="faq">
+        <div class="ask-input">
+          <input
+            type="text"
+            name="ask"
+            id="ask"
+            placeholder="Sormak istediğiniz soruyu yazın..."
+          />
+          <button>Arama Yap</button>
+        </div>
+        <div class="question">
+          <div class="header">
+            <span class="text"
+              ><b
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+                deserunt.</b
+              ></span
+            >
+            <span class="icon">
+              <i class="fas fa-chevron-up"></i>
+            </span>
+          </div>
+          <div class="body-collapse active">
+            <div class="text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
+              amet ut sed eligendi in voluptatum ipsa impedit fugit quo illum!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+              blanditiis tenetur sed laboriosam quod quam tempore totam esse
+              voluptatum accusantium.
+            </div>
+          </div>
+        </div>
+        <div class="question">
+          <div class="header">
+            <span class="text"
+              ><b
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+                deserunt.</b
+              ></span
+            >
+            <span class="icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </div>
+          <div class="body-collapse">
+            <div class="text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
+              amet ut sed eligendi in voluptatum ipsa impedit fugit quo illum!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+              blanditiis tenetur sed laboriosam quod quam tempore totam esse
+              voluptatum accusantium.
+            </div>
+          </div>
+        </div>
+        <div class="question">
+          <div class="header">
+            <span class="text"
+              ><b
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+                deserunt.</b
+              ></span
+            >
+            <span class="icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </div>
+          <div class="body-collapse">
+            <div class="text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
+              amet ut sed eligendi in voluptatum ipsa impedit fugit quo illum!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+              blanditiis tenetur sed laboriosam quod quam tempore totam esse
+              voluptatum accusantium.
+            </div>
+          </div>
+        </div>
+        <div class="question">
+          <div class="header">
+            <span class="text"
+              ><b
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+                deserunt.</b
+              ></span
+            >
+            <span class="icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </div>
+          <div class="body-collapse">
+            <div class="text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
+              amet ut sed eligendi in voluptatum ipsa impedit fugit quo illum!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+              blanditiis tenetur sed laboriosam quod quam tempore totam esse
+              voluptatum accusantium.
+            </div>
+          </div>
+        </div>
+        <div class="question">
+          <div class="header">
+            <span class="text"
+              ><b
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+                deserunt.</b
+              ></span
+            >
+            <span class="icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </div>
+          <div class="body-collapse">
+            <div class="text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
+              amet ut sed eligendi in voluptatum ipsa impedit fugit quo illum!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+              blanditiis tenetur sed laboriosam quod quam tempore totam esse
+              voluptatum accusantium.
+            </div>
+          </div>
+        </div>
+        <div class="question">
+          <div class="header">
+            <span class="text"
+              ><b
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+                deserunt.</b
+              ></span
+            >
+            <span class="icon">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </div>
+          <div class="body-collapse">
+            <div class="text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim
+              amet ut sed eligendi in voluptatum ipsa impedit fugit quo illum!
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+              blanditiis tenetur sed laboriosam quod quam tempore totam esse
+              voluptatum accusantium.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="write">Yıllar</div>
+      <div class="years grid">
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+      </div>
+      <div class="write">Aylar</div>
+      <div class="months grid">
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">2021</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+      </div>
+      <div class="write">Önemli Günler</div>
+      <div class="special-days grid">
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Cuma</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+      </div>
+      <div class="write">Kategoriler</div>
+      <div class="categories grid">
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Kayak</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+      </div>
+      <div class="write">Önemli</div>
+      <div class="special grid">
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">Haftasonu</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+      </div>
+      <div class="write">Gün Sayısı</div>
+      <div class="count-of-day grid">
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">3 Gün</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+      </div>
+
+      <div class="write">Kalkış</div>
+      <div class="take-off grid">
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+        <div class="grid-item">
+          <span class="bold">İzmir</span>
+          <span class="faded smaller">(125)</span>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="tours">
+        <div class="tour">
+          <h4 class="header">YURTDIŞI TURLARI</h4>
+          <ul>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Çok Gidilen
+                Turlar</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Çok Tercih
+                Edilenler</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>Vizesiz
+                Turlar</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>Ucuz Avrupa
+                Turu</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Ucuz Asya
+                Turu</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="tour">
+          <h4 class="header">KÜLTÜR TURLARI</h4>
+          <ul>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Çok Gidilen
+                Turlar</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Çok Tercih
+                Edilenler</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>Vizesiz
+                Turlar</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>Ucuz Avrupa
+                Turu</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Ucuz Asya
+                Turu</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="tour">
+          <h4 class="header">GEMI TURLARI</h4>
+          <ul>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Çok Gidilen
+                Turlar</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Çok Tercih
+                Edilenler</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>Vizesiz
+                Turlar</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>Ucuz Avrupa
+                Turu</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Ucuz Asya
+                Turu</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="tour">
+          <h4 class="header">VIZE IŞLEMLERI</h4>
+          <ul>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Çok Gidilen
+                Turlar</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Çok Tercih
+                Edilenler</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>Vizesiz
+                Turlar</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>Ucuz Avrupa
+                Turu</a
+              >
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><span><i class="fas fa-chevron-right"></i></span>En Ucuz Asya
+                Turu</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="social-links">
+          <a id="facebook-link"> <i class="fab fa-facebook"></i> </a>
+          <a id="twitter-link"> <i class="fab fa-twitter"></i> </a>
+          <a id="linkedin-link"> <i class="fab fa-linkedin"></i> </a>
+          <a id="youtube-link"> <i class="fab fa-youtube"></i> </a>
+        </div>
+        <div class="rights">
+          <span class="faded smaller"
+            >Kullanım Şartları |<br />
+            Gizlilik Politikası</span
+          >
+          <span class="faded smaller mr-30">2021© Tüm Hakları Saklıdır</span>
+          <span class="faded smaller">Hakkımızda | Blog</span>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+      integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
